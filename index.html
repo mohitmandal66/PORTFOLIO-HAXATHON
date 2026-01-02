@@ -10,7 +10,7 @@
             --neon-blue: #00f2fe;
             --neon-pink: #ff007f;
             --sun-halo: #ffcc00;
-            --neon-orange: #ffab40;
+            --portal-orange: #ff8c00;
         }
 
         * { box-sizing: border-box; }
@@ -23,7 +23,6 @@
             scroll-behavior: smooth;
         }
 
-        /* --- BACKGROUND --- */
         .universe-bg {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -31,7 +30,6 @@
             z-index: -2;
         }
 
-        /* --- 3D HERO SECTION --- */
         .hero {
             height: 100vh;
             width: 100%;
@@ -101,11 +99,11 @@
         }
         .planet:hover { transform: scale(1.3); box-shadow: 0 0 40px var(--neon-blue); }
 
-        /* Specific Planet Colors */
+        /* Planet Styles */
         .p1 { background: radial-gradient(circle at 30% 30%, #4facfe, #00f2fe, #000); top: -25px; left: 50%; margin-left: -25px; }
         .p2 { background: radial-gradient(circle at 30% 30%, #f093fb, #f5576c, #000); top: 50%; left: -25px; margin-top: -25px; }
         .p3 { background: radial-gradient(circle at 30% 30%, #fff, #bdc3c7, #000); bottom: -25px; left: 50%; margin-left: -25px; }
-        .p4 { background: radial-gradient(circle at 30% 30%, #ff9a9e, #fecfef, #000); top: 50%; right: -25px; margin-top: -25px; }
+        .p4 { background: radial-gradient(circle at 30% 30%, #ff9a6a, var(--portal-orange), #000); top: 50%; right: -25px; margin-top: -25px; }
 
         .project-label {
             position: absolute;
@@ -120,10 +118,10 @@
             position: fixed;
             top: 50%; left: 50%;
             transform: translate(-50%, -50%) scale(0.8);
-            width: 350px;
-            background: rgba(0,0,0,0.9);
+            width: 320px;
+            background: rgba(0,0,0,0.95);
             border: 1px solid var(--neon-blue);
-            padding: 30px;
+            padding: 25px;
             border-radius: 15px;
             z-index: 2000;
             display: none;
@@ -134,10 +132,10 @@
         @keyframes modalPop { to { transform: translate(-50%, -50%) scale(1); opacity: 1; } }
 
         .modal-btn {
-            margin-top: 20px;
+            margin-top: 15px;
             background: var(--neon-blue);
             color: #000; border: none;
-            padding: 10px 25px; font-family: 'Syncopate';
+            padding: 10px 20px; font-family: 'Syncopate';
             font-weight: 700; cursor: pointer;
             text-decoration: none;
             display: inline-block;
@@ -145,7 +143,6 @@
         }
         .modal-btn:hover { background: #fff; box-shadow: 0 0 15px var(--neon-blue); }
 
-        /* --- SECTIONS --- */
         .about-sec {
             min-height: 100vh; display: flex; justify-content: center; align-items: center;
             background: #000; padding: 50px;
@@ -159,14 +156,12 @@
         .bio h2 { font-family: 'Syncopate'; color: var(--neon-blue); margin: 0; letter-spacing: 2px; }
         .bio p { font-size: 1rem; color: #ccc; line-height: 1.6; }
 
-        /* --- FEEDBACK SECTION --- */
         .feedback-container {
             max-width: 600px; width: 90%;
             background: rgba(10, 17, 40, 0.7);
             border: 1px solid var(--neon-blue);
             padding: 30px; border-radius: 20px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 0 30px rgba(0, 242, 254, 0.1);
         }
         .feedback-input {
             width: 100%;
@@ -174,39 +169,33 @@
             border: 1px solid rgba(0, 242, 254, 0.3);
             padding: 15px; margin-bottom: 15px;
             color: white; font-family: 'Rajdhani'; font-size: 1rem;
-            border-radius: 8px; outline: none; transition: 0.3s;
+            border-radius: 8px; outline: none;
         }
-        .feedback-input:focus { border-color: var(--neon-blue); box-shadow: 0 0 10px rgba(0, 242, 254, 0.2); }
-        textarea.feedback-input { height: 120px; resize: none; }
 
         .gh-card {
             background: rgba(255,255,255,0.05); border: 1px solid var(--neon-blue);
             padding: 12px; text-decoration: none; color: white;
             transition: 0.3s; text-align: center; font-family: 'Syncopate'; font-size: 0.65rem;
         }
-        .gh-card:hover { background: var(--neon-blue); color: #000; transform: translateY(-3px); }
+        .gh-card:hover { background: var(--neon-blue); color: #000; }
 
-        .github-container {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;
-        }
+        .github-container { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; }
 
         .scroll-down {
             position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
             display: flex; flex-direction: column; align-items: center;
             font-family: 'Syncopate'; font-size: 0.6rem; color: var(--neon-blue); letter-spacing: 3px;
-            text-align: center;
         }
         .arrow {
-            width: 15px; height: 15px; border-right: 3px solid var(--neon-blue);
-            border-bottom: 3px solid var(--neon-blue); transform: rotate(45deg);
+            width: 12px; height: 12px; border-right: 2px solid var(--neon-blue);
+            border-bottom: 2px solid var(--neon-blue); transform: rotate(45deg);
             margin-top: 5px; animation: arrowBounce 1.5s infinite;
         }
-        @keyframes arrowBounce { 0%, 100% { opacity: 0; transform: rotate(45deg) translate(-5px, -5px); } 50% { opacity: 1; transform: rotate(45deg) translate(0, 0); } }
+        @keyframes arrowBounce { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
 
         @media (max-width: 768px) {
             .about-card { grid-template-columns: 1fr; text-align: center; }
             .hero { transform: scale(0.6); }
-            .main-title h1 { font-size: 1rem; }
         }
     </style>
 </head>
@@ -216,23 +205,119 @@
 
     <div id="projectModal">
         <h2 id="modalTitle" style="font-family: 'Syncopate'; color: var(--neon-blue);">PROJECT NAME</h2>
-        <p id="modalDesc" style="color: #ccc; font-size: 0.9rem; margin: 15px 0;">Description goes here...</p>
-        <button class="modal-btn" id="launchBtn">LAUNCH SITE</button>
+        <p id="modalDesc" style="color: #ccc; font-size: 0.9rem; margin: 15px 0;">Description...</p>
+        <button class="modal-btn" id="launchBtn">ENTER PROJECT</button>
         <button class="modal-btn" onclick="closeModal()" style="background:none; color:white; border:1px solid white; margin-left:10px;">CLOSE</button>
     </div>
 
     <section class="hero">
-        <div class="main-title">
-            <h1>OUR PROJECTS PORTFOLIO</h1>
-        </div>
+        <div class="main-title"><h1>OUR PROJECTS PORTFOLIO</h1></div>
 
         <div id="stage">
             <div class="sun-sphere"></div>
 
-            <div class="orbit" id="orbit1" style="width: 280px; height: 280px; animation-duration: 20s;">
-                <div class="planet p1" onclick="showDetails('PADHAI MATE', 'A futuristic educational ecosystem designed for focused learning.', 'https://mohitmandal66.github.io/padhai_mate/')">
+            <div class="orbit" style="width: 250px; height: 250px; animation-duration: 15s;">
+                <div class="planet p1" onclick="showDetails('PADHAI MATE', 'Futuristic learning ecosystem.', 'https://mohitmandal66.github.io/padhai_mate/')">
                     <div class="project-label">PADHAI MATE</div>
                 </div>
             </div>
 
-            <div class="orbit" id="orbit2" style="width: 440px; height:
+            <div class="orbit" style="width: 420px; height: 420px; animation-duration: 25s; animation-direction: reverse;">
+                <div class="planet p2" onclick="showDetails('SYMPTOMAX', 'Health diagnostic interface.', 'https://mohitmandal66.github.io/SYMPTOMAX/')">
+                    <div class="project-label" style="text-shadow: 0 0 8px var(--neon-pink);">SYMPTOMAX</div>
+                </div>
+            </div>
+
+            <div class="orbit" style="width: 600px; height: 600px; animation-duration: 35s;">
+                <div class="planet p3" onclick="showDetails('CAFE OKTOBER', 'Cinematic digital menu.', 'https://my-website108.github.io/CAFE_OKTOBER/')">
+                    <div class="project-label" style="text-shadow: 0 0 8px #fff;">CAFE OKTOBER</div>
+                </div>
+            </div>
+
+            <div class="orbit" style="width: 780px; height: 780px; animation-duration: 45s; animation-direction: reverse;">
+                <div class="planet p4" onclick="showDetails('RING PORTAL', '3D Mystical Dr. Strange effect.', 'https://mohitmandal66.github.io/DR-STRANGE-RING-PORTAL/')">
+                    <div class="project-label" style="text-shadow: 0 0 8px var(--portal-orange);">RING PORTAL</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-down">
+            SCROLL FOR ARCHITECTS
+            <div class="arrow"></div>
+        </div>
+    </section>
+
+    <section class="about-sec">
+        <div class="about-card">
+            <div>
+                <img src="me.png" alt="Mohit" onerror="this.src='https://via.placeholder.com/300x400/000/00f2fe?text=MOHIT'">
+                <div style="margin-top: 15px; border: 1px solid var(--neon-pink); padding: 5px; text-align: center; color: var(--neon-pink); font-family: 'Syncopate'; font-size: 0.6rem;">
+                    CORE_DEVELOPER
+                </div>
+            </div>
+            <div class="bio">
+                <h2>MOHIT MANDAL</h2>
+                <h4 style="color: var(--neon-pink); font-family: 'Syncopate'; font-size: 0.7rem; margin: 10px 0;">CORE ARCHITECT</h4>
+                <p style="border-left: 2px solid var(--neon-blue); padding-left: 15px;">Architecting high-performance web ecosystems.</p>
+                <div class="github-container">
+                    <a href="https://github.com/mohitmandal66?tab=repositories" class="gh-card">ARCHIVE_01</a>
+                    <a href="https://github.com/MY-Website108/CAFE_OKTOBER.git" class="gh-card">ARCHIVE_02</a>
+                </div>
+                <a href="https://wa.me/918822357598" class="modal-btn" style="width: 100%; text-align: center; margin-top: 20px;">CONTACT MOHIT</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-sec" style="background: radial-gradient(circle at bottom, #110008 0%, #000 70%);">
+        <div class="about-card" style="border-color: var(--neon-pink);">
+            <div class="bio" style="text-align: right;">
+                <h2 style="color: var(--neon-pink);">MD SAAD SIDDIQUE</h2>
+                <h4 style="color: var(--neon-blue); font-family: 'Syncopate'; font-size: 0.7rem; margin: 10px 0;">VISUAL ARCHITECT</h4>
+                <p style="border-right: 2px solid var(--neon-pink); padding-right: 15px;">Crafting the visual DNA of digital brands.</p>
+            </div>
+            <div style="order: -1;"> 
+                <img src="saad.png" alt="Saad" onerror="this.src='https://via.placeholder.com/300x400/000/ff007f?text=SAAD'">
+                <a href="https://wa.me/919954204298" class="modal-btn" style="width: 100%; text-align: center; margin-top: 20px; background: var(--neon-pink); color: white;">CONTACT SAAD</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const modal = document.getElementById('projectModal');
+        const stage = document.getElementById('stage');
+        const orbits = document.querySelectorAll('.orbit');
+
+        function showDetails(title, desc, url) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            // UPDATE: Removed _blank to stay in same tab
+            document.getElementById('launchBtn').onclick = () => { warpTo(url); };
+            modal.classList.add('active');
+            orbits.forEach(o => o.style.animationPlayState = 'paused');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            orbits.forEach(o => o.style.animationPlayState = 'running');
+        }
+
+        function warpTo(url) {
+            stage.style.transform = "scale(15) translateZ(1000px)";
+            stage.style.opacity = "0";
+            setTimeout(() => {
+                // UPDATE: Use location.href to stay in same tab
+                window.location.href = url;
+            }, 800);
+        }
+
+        for (let i = 0; i < 150; i++) {
+            const s = document.createElement('div');
+            s.style.position = 'absolute'; s.style.background = '#fff';
+            s.style.width = '1.5px'; s.style.height = '1.5px';
+            s.style.top = Math.random() * 100 + 'vh'; s.style.left = Math.random() * 100 + 'vw';
+            s.style.opacity = Math.random();
+            document.getElementById('stars').appendChild(s);
+        }
+    </script>
+</body>
+</html>
