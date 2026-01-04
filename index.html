@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOLAR PORTFOLIO | Mohit</title>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --neon-blue: #00f2fe;
@@ -186,7 +187,24 @@
             font-family: 'Syncopate';
         }
 
-        /* --- NEW FEEDBACK STYLES --- */
+        /* SOCIAL LINKS STYLING */
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+        }
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            color: var(--neon-blue);
+            transform: translateY(-3px);
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
         .feedback-container {
             width: 100%;
             max-width: 600px;
@@ -285,15 +303,7 @@
                     Expert in **Python-driven automation** and complex **Data Structures**, he ensures that the backend of every project is optimized for speed and mathematical precision. Whether it's crafting intricate **JSON** data trees or designing interactive **JavaScript** engines, his code is built to be futuristic and scalable.
                 </p>
 
-                
-                    <div class="social-links">
-                     <a href="https://www.instagram.com/syntaxslayer.dev/" target="_blank" aria-label="Instagram">
-                       <i class="fab fa-instagram"></i>
-                         </a>
-                  <a href="https://github.com/mohitmandal66" target="_blank" aria-label="GitHub">
-              <i class="fab fa-github"></i>
-             </a>
-              </div>
+               
                 <div style="margin: 25px 0; border-top: 1px solid rgba(0, 242, 254, 0.2); padding-top: 20px;">
                     <div style="color: var(--neon-blue); font-family: 'Syncopate'; font-size: 0.8rem; margin-bottom: 10px;">SYSTEM ARCHITECTURE</div>
                     <span class="skill-tag">PYTHON 3.x</span> 
@@ -308,7 +318,18 @@
                     <span class="skill-tag">3D TRANSFORMS</span>
                 </div>
 
-                <a href="https://wa.me/918822357598" class="modal-btn">CONTACT ARCHITECT</a>
+                <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+                    <a href="https://wa.me/918822357598" class="modal-btn" style="margin-top: 0;">CONTACT ARCHITECT</a>
+                    
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/syntaxslayer.dev/" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com/mohitmandal66" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -341,11 +362,10 @@
             }
         }
 
-        // FEEDBACK LOGIC
         function sendFeedback() {
             const name = document.getElementById('fbName').value;
             const msg = document.getElementById('fbMsg').value;
-            const phone = "918822357598"; // Format: CountryCodeNumber
+            const phone = "918822357598"; 
 
             if (name === "" || msg === "") {
                 alert("Please fill in both fields before transmitting.");
@@ -402,17 +422,6 @@
                 layer.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
             });
         });
-    </script> <script src='https://cdn.jotfor.ms/agent/embedjs/019b7f12bb4b7f1ea4ecab2f09b9bd3e6351/embed.js'>
-</script>
-</script>
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
